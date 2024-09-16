@@ -7,5 +7,5 @@ const authToken = process.env.TURSO_AUTH_TOKEN!;
 export async function GET() {
   const client = createClient({ url, authToken });
   const result = await client.execute("SELECT 1");
-  return new Response(`Hello from ${process.env.VERCEL_REGION} ${result}`);
+  return new Response(`Hello from ${process.env.VERCEL_REGION} ${JSON.stringify(result)}`);
 }
