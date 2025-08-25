@@ -5,7 +5,7 @@ const url = process.env.TURSO_DATABASE_URL!;
 const authToken = process.env.TURSO_AUTH_TOKEN!;
  
 export async function GET() {
-  const client = createClient({ url, authToken });
-  const result = await client.execute("SELECT * FROM sqlite_master");
-  return new Response(`Hello from ${process.env.VERCEL_REGION} ${JSON.stringify(result)}`);
+//  const client = createClient({ url, authToken });
+ // const result = await client.execute("SELECT * FROM sqlite_master");
+  return new Response(`Hello from ${process.env.VERCEL_REGION} ${process.env.TURSO_DATABASE_URL} ${url}`);
 }
